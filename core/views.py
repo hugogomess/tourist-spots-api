@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import TouristSpot
+from .serializers import TouristSpotSerializer
 
-# Create your views here.
+class TouristSpotViewSet(ModelViewSet):
+
+    queryset = TouristSpot.objects.all()
+    serializer_class = TouristSpotSerializer
