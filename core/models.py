@@ -12,7 +12,7 @@ class TouristSpot(models.Model):
     attractions = models.ManyToManyField(Attraction)
     comments = models.ManyToManyField(Comment)
     reviews = models.ManyToManyField(Review)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE)
+    address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
