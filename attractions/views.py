@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from .models import Attraction
+from .serializers import AttractionSerializer
 
-# Create your views here.
+class AttractionViewSet(ModelViewSet):
+
+    queryset = Attraction.objects.all()
+    serializer_class = AttractionSerializer

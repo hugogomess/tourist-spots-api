@@ -18,9 +18,11 @@ from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
 from core.views import TouristSpotViewSet
+from attractions.views import AttractionViewSet
 
 router = routers.DefaultRouter()
-router.register(r'tourist-spot', TouristSpotViewSet)
+router.register(r'tourist-spots', TouristSpotViewSet)
+router.register(r'attractions', AttractionViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
