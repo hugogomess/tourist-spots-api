@@ -20,11 +20,16 @@ from rest_framework import routers
 from core.views import TouristSpotViewSet
 from attractions.views import AttractionViewSet
 from addresses.views import AddressViewSet
+from comments.views import CommentViewSet
+from reviews.views import ReviewViewSet
+
 
 router = routers.DefaultRouter()
 router.register(r'tourist-spots', TouristSpotViewSet)
 router.register(r'attractions', AttractionViewSet)
 router.register(r'addresses', AddressViewSet)
+router.register(r'comments', CommentViewSet)
+router.register(r'reviews', ReviewViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
