@@ -19,10 +19,12 @@ from django.conf.urls import include
 from rest_framework import routers
 from core.views import TouristSpotViewSet
 from attractions.views import AttractionViewSet
+from addresses.views import AddressViewSet
 
 router = routers.DefaultRouter()
 router.register(r'tourist-spots', TouristSpotViewSet)
 router.register(r'attractions', AttractionViewSet)
+router.register(r'addresses', AddressViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
