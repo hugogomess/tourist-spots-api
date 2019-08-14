@@ -13,6 +13,7 @@ class TouristSpot(models.Model):
     comments = models.ManyToManyField(Comment)
     reviews = models.ManyToManyField(Review)
     address = models.ForeignKey(Address, on_delete=models.CASCADE, null=True, blank=True)
+    image = models.ImageField(upload_to='tourist_spot', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
