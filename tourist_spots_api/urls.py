@@ -24,6 +24,7 @@ from attractions.views import AttractionViewSet
 from addresses.views import AddressViewSet
 from comments.views import CommentViewSet
 from reviews.views import ReviewViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 
 router = routers.DefaultRouter()
@@ -35,5 +36,6 @@ router.register(r'reviews', ReviewViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api-token-auth/', obtain_auth_token),
     path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

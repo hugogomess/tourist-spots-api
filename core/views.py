@@ -3,10 +3,14 @@ from rest_framework.response import Response
 from rest_framework.decorators import action
 from .models import TouristSpot
 from .serializers import TouristSpotSerializer
+from rest_framework.permissions import IsAuthenticated, IsAdminUser
+from rest_framework.authentication import TokenAuthentication
 
 class TouristSpotViewSet(ModelViewSet):
     
     serializer_class = TouristSpotSerializer
+    permission_classes = (IsAuthenticated,)
+    authentication_classes = (TokenAuthentication,)
 
     def get_queryset(self):
         id = self.request.query_params.get('id', None)
