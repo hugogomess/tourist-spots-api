@@ -17,5 +17,9 @@ class TouristSpot(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
+    @property
+    def test_description_two(self):
+        return self.name + ' - ' + self.description
+
     def __str__(self):
         return self.name
