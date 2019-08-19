@@ -25,7 +25,7 @@ To check the dependencies, use the commands `$ python --version`, `$ pip --versi
 3. Solve the dependencys:
 
   ```
-  $ pip install -r requirements.txt
+  $ pip install -r requirements-dev.txt
   ```
 
 4. Create migrate

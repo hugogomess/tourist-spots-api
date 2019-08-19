@@ -7,6 +7,7 @@ class Attraction(models.Model):
     opening_time = models.TimeField(null=True, blank=True)
     close_time = models.TimeField(null=True, blank=True)
     minimum_age = models.IntegerField()
+    obs = models.CharField(max_length=50, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
