@@ -49,3 +49,13 @@ class TouristSpotViewSet(ModelViewSet):
     @action(methods=['get'], detail=False)
     def by_seila(self, request):
         return Response({'kkk': 'kkk sei lá doido'})
+
+    @action(methods=['post'], detail=True)
+    def associate_attractions(self, request, id):
+        attractions = request.data['ids']
+
+        tourist_spot = TouristSpot.objects.get(id=id)
+        tourist_spot.set(attractions)
+        tourist_spot.save()
+
+        return Response('ok')
