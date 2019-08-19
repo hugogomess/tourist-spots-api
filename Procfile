@@ -1,0 +1,1 @@
+web: gunicorn tourist_spots_api.wsgi --log-file -
